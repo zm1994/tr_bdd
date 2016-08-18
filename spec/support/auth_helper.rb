@@ -1,11 +1,7 @@
 module AuthHelper
-
-  $part_email = ""
   $part_email = ""
 
   def auth_login(user_mail, user_pass)
-    find('[href="/profile/login"]').click
-
     $modal_auth_reg_window = find('.modal_dialog__content .login_registration')
 
     if user_mail.size > 0
@@ -21,6 +17,13 @@ module AuthHelper
     if user_mail.size > 0
       $part_email = user_mail.split('@')[0] + '@'
     end
+  end
+
+  def auth_from_booking_page(user_mail, user_pass)
+    find('.avia_order_form__sign_in_link').click
+    auth_login(user_mail, user_pass)
+    expect(page).not_to have_selector('.login_registration__forms')
+    expect(page).not_to have_selector('.modal_dialog__preloader')
   end
 
   def auth_logout

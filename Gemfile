@@ -46,6 +46,7 @@ group :test do
   gem "capybara-webkit"
   gem 'email_spec'
   gem 'capybara-email'
+  gem 'rspec-retry'
 end
 
 group :development do

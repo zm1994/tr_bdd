@@ -108,6 +108,40 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="false" name="Form search open booking page: bdd" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="bdd" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/features/oneway_trip_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Form search open booking page" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -130,7 +164,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.0.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.0.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.4.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="arel (v7.1.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="arel (v7.1.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.12.5, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.7.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
@@ -151,7 +185,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.14, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.6, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.7, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="htmlentities (v4.3.4, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.6.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
@@ -171,7 +205,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v1.2.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.8, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.9.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parallel_tests (v2.7.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parallel_tests (v2.7.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="phantomjs (v2.1.1.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pkg-config (v1.1.7, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="poltergeist (v1.10.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
@@ -187,10 +221,11 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.9.7, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.9.7, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ref (v2.0.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.5.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.5.2, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.5.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.5.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v3.5.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-retry (v0.5.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.5.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.2.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.22, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
@@ -206,10 +241,10 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.5, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.0.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.0.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.0.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.0.0, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.0.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v3.3.1, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.2.3, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.6.4, RVM: ruby-2.3.0 [bdd]) [gem]" level="application" />

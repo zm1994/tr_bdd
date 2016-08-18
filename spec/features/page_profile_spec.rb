@@ -14,7 +14,8 @@ describe "My profile" do
   user_password = 'qwerty123'
 
   before do
-    visit('https://tripway.dev')
+    visit($dev_root_path)
+    find('[href="/profile/login"]').click
     auth_login(user_mail, user_password)
     open_my_profile
   end
@@ -102,12 +103,13 @@ describe 'My passengers' do
   user_password = 'qwerty123'
 
   before do
-    visit('https://tripway.dev')
+    visit($dev_root_path)
+    find('[href="/profile/login"]').click
     auth_login(user_mail, user_password)
     open_my_passengers
   end
 
-  it 'add new passenger' do
+  it 'add new passenger', retry: 3 do
     passenger = {gender: 1,               #man
                  first_name: 'FIRSTNAME',
                  last_name: 'LASTNAME',
@@ -116,5 +118,19 @@ describe 'My passengers' do
                  passport_expire: '16162017'}
 
     add_new_passenger(passenger)
+  end
+
+  it 'delete last passenger', retry: 3 do
+    # count passengers
+    expect(page).to have_selector('#edit_user')
+    initial_count_pass = all("#edit_user .fields ul").size
+    if initial_count_pass > 0
+      passenger = all('#edit_user .fields').last
+      passenger.find('.remove a').click
+      find('.modal_dialog__background_theme-confirmation [data-confirmation-action="confirm"]').click
+      expect(page).not_to have_selector('.modal_dialog__background')
+      expect(page).not_to have_selector('.modal_dialog__preloader')
+      expect(all("#edit_user .fields ul").size < initial_count_pass).to be true
+    end
   end
 end

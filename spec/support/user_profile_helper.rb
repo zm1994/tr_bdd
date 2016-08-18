@@ -135,6 +135,5 @@ module ProfileEditPassengers
       field_remove_pass = find('ul[id*="passenger"]', text: first_name)
       field_remove_pass.find('.remove a').click
     end
-
   end
 end

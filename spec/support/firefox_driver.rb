@@ -18,27 +18,8 @@ Capybara::Webkit.configure do |config|
 
 end
 
-Capybara.default_max_wait_time = 40
+Capybara.default_max_wait_time = 50
 Capybara.javascript_driver = :selenium
 Capybara.default_driver = :webkit
 
-# Capybara.register_driver :poltergeist_debug do |app|
-#   options = {
-#       phantomjs_options: ['--load-images=no'],
-#       js_errors: true,
-#       phantomjs_logger: Logger.new(STDOUT)
-#   }
-#   Capybara::Poltergeist::Driver.new(app,options)
-# end
-
-# Capybara.register_driver :firefox do |app|
-#   profile = Selenium::WebDriver::Firefox::Profile.new
-#   profile['webdriver.load.strategy'] = 'unstable'
-#   Capybara::Selenium::Driver.new(app, :browser => :firefox, profile: profile)
-# end
-
-# Capybara.default_driver = :poltergeist
-#
-# Capybara.javascript_driver = :selenium
-
-# Capybara.default_driver = :poltergeist
+$dev_root_path = 'https://tripway.stb'

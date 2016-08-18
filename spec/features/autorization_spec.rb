@@ -9,7 +9,8 @@ describe 'Autorization' do
   user_password = 'qwerty123'
 
   before do
-    visit('https://tripway.dev')
+    visit($dev_root_path)
+    find('[href="/profile/login"]').click
   end
 
   it 'authorization with user that doesnt exist' do
@@ -24,26 +25,30 @@ describe 'Autorization' do
   end
 
 
-  it 'authorization with invalid email', js: true do
+  it 'authorization with invalid email', js:true do
     auth_login('@mail.ru', user_password)
     expect($modal_auth_reg_window).to have_selector('.bubble_error__content')
     # expect($modal_auth_reg_window).to have_selector('#flash_alert')
     close_auth_modal
+  end
 
+  it 'authorization with no email', js: true do
     auth_login('', user_password)
     expect($modal_auth_reg_window).to have_selector('.bubble_error__content')
     # expect($modal_auth_reg_window).to have_selector('#flash_alert')
     close_auth_modal
   end
 
-  it 'authorization with invalid password', js: true do
+  it 'authorization with invalid password', js:true do
+    auth_login(user_mail, user_password[0...-1])
+    expect($modal_auth_reg_window).to have_selector('#flash_alert')
+    close_auth_modal
+  end
+
+  it 'authorization with no password', js:true do
     auth_login(user_mail, '')
     expect($modal_auth_reg_window).to have_selector('.bubble_error__content')
     # expect($modal_auth_reg_window).to have_selector('#flash_alert')
-    close_auth_modal
-
-    auth_login(user_mail, user_password[0...-1])
-    expect($modal_auth_reg_window).to have_selector('#flash_alert')
     close_auth_modal
   end
 end

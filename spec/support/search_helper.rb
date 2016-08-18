@@ -3,7 +3,31 @@ module AviaSearch
   $url_recommendation_round = ""
   $url_recommendation_complex = ""
 
-  def choose_avia_search(type_avia_search, papams_avia_location, params_flight_dates, params_passangers)
+  def try_search_regular_and_lowcosts(type_avia_search, params_avia_location, params_flight_dates, params_passengers, with_flexible_dates = false)
+    # start 5 tries if search was failed
+    5.times do
+      start_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers,with_flexible_dates)
+      expect(page).to have_selector('.avia_recommendations__lowcosts_preloader')
+      expect(page).not_to have_selector('.avia_recommendations__lowcosts_preloader')
+      recommendation_list = find('[data-class="Avia.RecommendationsList"]')
+      break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]') and recommendation_list.has_selector?('.avia_recommendation[data-kind="lowcost"]')
+      params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
+      params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
+    end
+  end
+
+  def try_search_regular(type_avia_search, params_avia_location, params_flight_dates,params_passengers, with_flexible_dates = false)
+    # start 5 tries if search was failed
+    5.times do
+      start_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers, with_flexible_dates)
+      recommendation_list = find('[data-class="Avia.RecommendationsList"]')
+      break if recommendation_list.has_selector?('[data-kind="regular"]')
+      params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
+      params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
+    end
+  end
+
+  def start_avia_search(type_avia_search, papams_avia_location, params_flight_dates, params_passengers, with_flexible_dates)
     if(type_avia_search == 'one_way')
       search_one_way_trip(papams_avia_location, params_flight_dates)
     elsif(type_avia_search == 'round_trip')
@@ -12,7 +36,8 @@ module AviaSearch
       search_complex_trip(papams_avia_location, params_flight_dates)
     end
 
-    choose_passengers(params_passangers)
+    choose_passengers(params_passengers)
+    find('[for="avia_search_flexible_date"]').click if with_flexible_dates
     find('.avia_search_form__submit [type="submit"]').click
   end
 
@@ -66,12 +91,15 @@ module AviaSearch
   end
 
   def choose_passengers(params_passengers)
+    # open slide
     find('.avia_search_passengers_with_class').click
     find('#avia_search_adults_count').set params_passengers[:adults]
     find('#avia_search_children_count').set params_passengers[:children]
     find('#avia_search_infants_count').set params_passengers[:infants]
 
     choose_cabin_class(params_passengers[:cabin_class])
+    # close slide
+    find('.avia_search_passengers_with_class').click
   end
 
   def choose_cabin_class(class_type)
@@ -83,30 +111,14 @@ module AviaSearch
   end
 
   def increase_date_flight(flight_date)
-    date = Time.parse(flight_date) + 1.day
-    date.strftime("%d.%m.%Y")
-  end
-
-  def try_search_regular_and_lowcosts(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
-    # start 5 tries if search was failed
-    5.times do
-      choose_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
-      expect(page).not_to have_selector('.avia_recommendations__lowcosts_preloader')
-      recommendation_list = find('[data-class="Avia.RecommendationsList"]')
-      break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]') and recommendation_list.has_selector?('.avia_recommendation[data-kind="lowcost"]')
-      params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
-      params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
+    unless flight_date.nil?
+      date = Time.parse(flight_date) + 1.day
+      date.strftime("%d.%m.%Y")
     end
   end
 
-  def try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
-    # start 5 tries if search was failed
-    5.times do
-      choose_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
-      recommendation_list = find('[data-class="Avia.RecommendationsList"]')
-      break if recommendation_list.has_selector?('[data-kind="regular"]')
-      params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
-      params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
-    end
+  def check_aviability_lowcosts_and_redular()
+    expect(page).to have_selector('.avia_recommendation[data-kind="regular"]')
+    expect(page).to have_selector('.avia_recommendation[data-kind="lowcost"]')
   end
 end
