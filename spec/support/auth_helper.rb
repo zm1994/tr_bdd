@@ -20,7 +20,7 @@ module AuthHelper
   end
 
   def auth_from_booking_page(user_mail, user_pass)
-    find('.avia_order_form__sign_in_link').click
+    find('.order_form__sign_in_link').click
     auth_login(user_mail, user_pass)
     expect(page).not_to have_selector('.login_registration__forms')
     expect(page).not_to have_selector('.modal_dialog__preloader')
@@ -51,7 +51,7 @@ module AuthHelper
 
   def open_my_passengers
     find(".header_profile__username_link", text: "#{$part_email}").click
-    find('.dropdown__menu_items [href="/avia/orders"]').click      #open booking page and redirect to passengers
+    find('.dropdown__menu_items [href="/orders"]').click      #open booking page and redirect to passengers
     find('[href="/profile/passengers"]').click
   end
 

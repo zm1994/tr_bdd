@@ -22,4 +22,5 @@ Capybara.default_max_wait_time = 50
 Capybara.javascript_driver = :selenium
 Capybara.default_driver = :webkit
 
-$dev_root_path = 'https://tripway.stb'
+$root_path_avia = 'https://tripway.dev'
+$root_path_railway = 'https://tripway.dev/railway'
