@@ -14,7 +14,7 @@ describe "My profile" do
   user_password = 'qwerty123'
 
   before do
-    visit($dev_root_path)
+    visit($root_path_avia)
     find('[href="/profile/login"]').click
     auth_login(user_mail, user_password)
     open_my_profile
@@ -103,7 +103,7 @@ describe 'My passengers' do
   user_password = 'qwerty123'
 
   before do
-    visit($dev_root_path)
+    visit($root_path_avia)
     find('[href="/profile/login"]').click
     auth_login(user_mail, user_password)
     open_my_passengers

@@ -9,7 +9,7 @@ describe 'Autorization' do
   user_password = 'qwerty123'
 
   before do
-    visit($dev_root_path)
+    visit($root_path_avia)
     find('[href="/profile/login"]').click
   end
 

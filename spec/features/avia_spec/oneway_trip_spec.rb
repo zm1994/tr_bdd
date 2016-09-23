@@ -1,9 +1,9 @@
 require 'rails_helper'
 require 'support/auth_helper'
 require 'support/firefox_driver'
-require 'support/search_helper'
-require 'support/booking_helper'
-require 'support/test_data_helper'
+require 'support/avia_booking_helper'
+require 'support/avia_search_helper'
+require 'support/avia_test_data_helper'
 
 describe 'Form search' do
   include AviaSearch
@@ -18,7 +18,7 @@ describe 'Form search' do
   data_payer = Payer.new
 
   before do
-    visit($dev_root_path)
+    visit($root_path)
     params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
     params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
   end

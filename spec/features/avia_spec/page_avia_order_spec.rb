@@ -1,15 +1,15 @@
 require 'rails_helper'
 require 'support/auth_helper'
 require 'support/firefox_driver'
-require 'support/search_helper'
-require 'support/booking_helper'
-require 'support/test_data_helper'
+require 'support/avia_booking_helper'
+require 'support/avia_search_helper'
+require 'support/avia_test_data_helper'
 
 describe 'Page avia order for round search' do
   include AviaSearch
   include AviaBooking
   include AuthHelper
-  include TestData
+  # include TestData
 
   search = DataRoundSearch.new
   type_avia_search = search.type_avia_search
@@ -18,7 +18,7 @@ describe 'Page avia order for round search' do
   params_passengers = search.params_passengers
 
   before do
-    visit($dev_root_path)
+    visit($root_path)
   end
 
   it 'check regular booking without input data', retry: 3 do

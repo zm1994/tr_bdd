@@ -1,3 +1,5 @@
+# require 'support/avia_support/search_helper'
+
 module AviaBooking
   include AviaSearch
 

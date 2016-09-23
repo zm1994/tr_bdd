@@ -13,13 +13,13 @@
       @type_avia_search = 'one_way'
       @string_format_date = @time_departure.strftime("%d.%m.%Y")
 
-      @params_avia_location = {departure_avia_city: @departure_city,
-                               departure_avia_code: @departure_avia_code,
-                               arrival_avia_city: @arrival_city,
-                               arrival_avia_code: @arrival_avia_code}
+      @params_avia_location = { departure_avia_city: @departure_city,
+                                departure_avia_code: @departure_avia_code,
+                                arrival_avia_city: @arrival_city,
+                                arrival_avia_code: @arrival_avia_code }
 
-      @params_flight_dates = {date_departure: @string_format_date}
-      @params_passengers = {adults: '1', children: '1', infants: '1', cabin_class: 'economy'}
+      @params_flight_dates = { date_departure: @string_format_date }
+      @params_passengers = { adults: '1', children: '1', infants: '1', cabin_class: 'economy' }
     end
   end
 
@@ -40,15 +40,15 @@
       @string_format_date_dep = @time_departure.strftime("%d.%m.%Y")
       @string_format_date_arr = @time_arrive.strftime("%d.%m.%Y")
 
-      @params_avia_location = {departure_avia_city: @departure_city,
-                               departure_avia_code: @departure_avia_code,
-                               arrival_avia_city: @arrival_city,
-                               arrival_avia_code: @arrival_avia_code}
+      @params_avia_location = { departure_avia_city: @departure_city,
+                                departure_avia_code: @departure_avia_code,
+                                arrival_avia_city: @arrival_city,
+                                arrival_avia_code: @arrival_avia_code }
 
-      @params_flight_dates = {date_departure: @string_format_date_dep,
-                              date_arrival: @string_format_date_arr}
+      @params_flight_dates = { date_departure: @string_format_date_dep,
+                               date_arrival: @string_format_date_arr }
 
-      @params_passengers = {adults: '1', children: '1', infants: '1', cabin_class: 'economy'}
+      @params_passengers = { adults: '1', children: '1', infants: '1', cabin_class: 'economy' }
     end
   end
 
@@ -69,16 +69,16 @@
       @string_format_date_dep = @time_departure.strftime("%d.%m.%Y")
       @string_format_date_arr = @time_arrive.strftime("%d.%m.%Y")
 
-      @params_avia_location = {departure_avia_city: @departure_city,
-                               departure_avia_code: @departure_avia_code,
-                               arrival_avia_city: @arrival_city,
-                               arrival_avia_code: @arrival_avia_code}
+      @params_avia_location = { departure_avia_city: @departure_city,
+                                departure_avia_code: @departure_avia_code,
+                                arrival_avia_city: @arrival_city,
+                                arrival_avia_code: @arrival_avia_code }
       # date_arrival is a date of departure second flight trip
 
-      @params_flight_dates = {date_departure: @string_format_date_dep,
-                              date_arrival: @string_format_date_arr}
+      @params_flight_dates = { date_departure: @string_format_date_dep,
+                               date_arrival: @string_format_date_arr }
 
-      @params_passengers = {adults: '1', children: '1', infants: '1', cabin_class: 'economy'}
+      @params_passengers = { adults: '1', children: '1', infants: '1', cabin_class: 'economy' }
     end
   end
 
@@ -86,23 +86,23 @@
     attr_accessor :params_adult, :params_child, :params_infant
 
     def initialize
-      @params_adult = {first_name: 'ANDREY',
-                       last_name: 'ANDREEV',
-                       birthday: '12.01.1980',
-                       passport_number: 'CE7489384',
-                       passport_expired: '20.12.2017'}
-      #ДОДЕЛАЙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      @params_child[:first_name] = 'SERGEY'
-      @params_child[:last_name] = 'ANDREEV'
-      @params_child[:birthday] = '15.05.2008'
-      @params_child[:passport_number] = 'VM9854755'
-      @params_child[:passport_expired] = '10.10.2019'
+      @params_adult = { first_name: 'ANDREY',
+                        last_name: 'ANDREEV',
+                        birthday: '12.01.1980',
+                        passport_number: 'CE7489384',
+                        passport_expired: '20.12.2017' }
 
-      @params_infant[:first_name] = 'ALEXANDR'
-      @params_infant[:last_name] = 'ANDREEV'
-      @params_infant[:birthday] = '09.04.2016'
-      @params_infant[:passport_number] = 'CE7489384'
-      @params_infant[:passport_expired] = '20.12.2017'
+      @params_child = { first_name:  'SERGEY',
+                        last_name:  'ANDREEV',
+                        birthday: '15.05.2008',
+                        passport_number: 'VM9854755',
+                        passport_expired: '10.10.2019' }
+
+      @params_infant = { first_name: 'ALEXANDR',
+                         last_name: 'ANDREEV',
+                         birthday: '09.04.2016',
+                         passport_number: 'CE7489384',
+                         passport_expired: '20.12.2017' }
     end
   end
 
@@ -110,10 +110,10 @@
     attr_accessor :payer
 
     def initialize
-      @payer = {juridical_name: 'TEST TEST',
+      @payer = { juridical_name: 'TEST TEST',
                 registration_number: '12345678',
                 email: 'test@example.com',
                 phone: '+380234534545',
-                full_name: 'TESTER'}
+                full_name: 'TESTER' }
     end
   end
