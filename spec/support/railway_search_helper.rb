@@ -2,8 +2,8 @@ module RailWaySearch
   $url_avia_recommendation = ""
 
   def choose_popular_cities_in_form_search(city_departure, city_arrival)
-    find(".railway_popular_cities__list-from .railway_popular_cities__list_item [title=\"#{city_departure}\"]").click
-    find(".railway_popular_cities__list-to .railway_popular_cities__list_item [title=\"#{city_arrival}\"]").click
+    find('.railway_popular_stations__list-from .railway_popular_stations__station_link', text: city_departure).click
+    find('.railway_popular_stations__list-to .railway_popular_stations__station_link', text: city_arrival).click
   end
 
   def choose_date_departure(date)
@@ -15,6 +15,10 @@ module RailWaySearch
       date = Time.parse(date) + 1.day
       date.strftime("%d.%m.%Y")
     end
+  end
+
+  def get_current_date
+    Time.now.strftime("%d.%m.%Y")
   end
 
   def input_params_search(city_departure, city_arrival, date_departure)

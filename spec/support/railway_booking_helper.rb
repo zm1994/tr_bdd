@@ -31,6 +31,7 @@ module RailwayBooking
     expect(page).to have_selector('.wagon_place.available')
     first('.wagon_place.available:not(.selected)').click
     expect(page).to have_selector('[data-class="Railway.PreorderForm.Passenger"]')
+    # return
     find('[data-class="Railway.PreorderForm"]')
   end
 
