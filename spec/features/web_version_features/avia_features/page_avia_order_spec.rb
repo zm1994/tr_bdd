@@ -48,7 +48,7 @@ describe 'Page avia order for round search' do
     expect(first('.avia_order_journey_item_element_documents_firstname input').value.length > 0).to be(true)
   end
 
-  it 'check availability to autorization with agent email in regular booking', retry: 3, js:true do
+  it 'check availability to autorization with agent email in regular booking', retry: 3 do
     if $url_page_booking_round_regular.length > 0
       visit($url_page_booking_round_regular)
     else
@@ -72,5 +72,22 @@ describe 'Page avia order for round search' do
     first('[data-class="Avia.PassengersDropdown"]').click
     first('.order_form_passengers_dropdown__menu_item').click
     expect(first('.avia_kiwi_order_journey_item_element_documents_firstname input').value.length > 0).to be(true)
+  end
+
+  it'check choice baggage in lowcost order page', retry: 3 do
+    if $url_page_booking_round_lowcost.length > 0
+      visit($url_page_booking_round_lowcost)
+    else
+      $url_page_booking_round_lowcost = try_open_booking_page_for_lowcost($url_recommendation_round, type_avia_search, params_avia_location, params_flight_dates, params_passengers)
+    end
+    # click button choose baggage
+    expect(page).to have_selector('.avia_kiwi_order_form')
+
+    first('.order_form__add_baggage_button').click
+    # choose 1 baggage
+    first('[for="avia_kiwi_order_journey_item_attributes_element_attributes_documents_attributes_0_additional_baggage_quantity_1"]').click
+    expect(page).to have_selector('.notify_message_layout-modal_dialog')
+    find('[data-role="avia.kiwi.orders.error_message.continue"]').click
+    expect(page).not_to have_selector('.notify_message_layout-modal_dialog')
   end
 end

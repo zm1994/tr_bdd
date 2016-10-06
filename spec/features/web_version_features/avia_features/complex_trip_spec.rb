@@ -24,7 +24,7 @@ describe 'Form search' do
     params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
   end
 
-  it'search complex trip IEV-WAW' do
+  it'search complex trip IEV-WAW', retry: 3 do
     try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     puts(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     expect(page).to have_selector('.avia_recommendation[data-kind="regular"]')

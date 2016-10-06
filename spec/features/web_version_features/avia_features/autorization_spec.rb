@@ -1,6 +1,7 @@
 require 'rails_helper'
 require 'support/auth_helper'
 require 'support/firefox_driver'
+require 'support/page_helper'
 
 describe 'Autorization/Registration' do
   include AuthHelper
@@ -23,7 +24,6 @@ describe 'Autorization/Registration' do
     expect(page).not_to have_selector('.login_registration_layout-modal_dialog')
     auth_logout
   end
-
 
   it 'authorization with invalid email', js:true do
     auth_login('@mail.ru', user_password)
@@ -62,5 +62,14 @@ describe 'Autorization/Registration' do
     find('.registration_form__actions_layout-modal_dialog').click
     expect(page).not_to have_selector('.modal_dialog__preloader')
     expect(page).not_to have_selector('.login_registration_layout-modal_dialog')
+  end
+
+  it 'check when user forget his password' do
+    find('a.login_form__recover_password_layout-modal_dialog').click
+    expect(page).to have_selector('.user_recover_password_layout-modal_dialog')
+    find('.input_layout-modal_dialog input').set user_mail
+    find('.user_recover_password_form__actions_layout-modal_dialog').click
+    expect(page).to have_selector('.flash__message_content_theme-notice')
+    expect(page_broken?).to be false
   end
 end
