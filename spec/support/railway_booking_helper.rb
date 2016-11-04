@@ -21,7 +21,7 @@ module RailwayBooking
   def open_passenger_block_input(type_wagon)
     expect(page).to have_selector('.variant_price')
     if type_wagon.length > 0
-      # find parent of the selector with name type_car, which contained button to open block with cars
+      # find parent of the selector with name type_wagon, which contained button to open block with wagons
       car = first('.variant_wagon_type', text: type_wagon).find(:xpath, '..').find(:xpath, '..')
       car.find('.railway_recommendation_details__variant_details_colon a').click
     else
@@ -67,7 +67,7 @@ module RailwayBooking
     # click on submit button
     find('.railway_order_form__button').click
     expect(page).not_to have_selector('.notify_message_layout-modal_dialog')
-    expect(page).to have_selector('[href="https://www.liqpay.com/"]')
+    expect(page).to have_selector('.sng__liqpay__power')
     find('.cancel__payment a').click
     expect(page).to have_selector('.railway_order')
   end

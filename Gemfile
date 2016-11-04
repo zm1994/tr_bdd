@@ -47,6 +47,7 @@ group :test do
   gem 'email_spec'
   gem 'capybara-email'
   gem 'rspec-retry'
+  gem "chromedriver-helper"
 end
 
 group :development do

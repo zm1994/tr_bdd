@@ -36,7 +36,7 @@ describe 'Form search' do
     expect($url_page_booking_complex_regular).not_to be(nil)
   end
 
-  it 'make booking with 3 passengers', retry: 3 do
+  it 'make complex booking with 3 passengers', retry: 3 do
     $url_page_booking_complex_regular = try_open_booking_page_for_regular($url_recommendation_complex, type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     first_passenger = '#document_0'
     fill_passenger(first_passenger, data_passengers.params_adult)
@@ -47,5 +47,17 @@ describe 'Form search' do
     # pry.binding
     input_data_payer_physical(payer.params_payer)
     try_booking_regular($url_recommendation_complex, $url_page_booking_complex_regular)
+  end
+
+  it 'check complex fare rules ' do
+    if($url_recommendation_complex.length == 0)
+      $url_recommendation_complex = try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
+    else
+      visit($url_recommendation_complex)
+    end
+
+    # find first fare rule end check content
+    first('.avia_recommendation__link').click
+    check_fare_rules
   end
 end

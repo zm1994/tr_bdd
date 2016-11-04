@@ -12,6 +12,7 @@ require 'capybara/poltergeist'
 require 'phantomjs'
 require 'open-uri'
 require 'capybara-screenshot/rspec'
+require "selenium/webdriver"
 # require 'email_spec'
 require 'capybara/email/rspec'
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -32,6 +33,24 @@ require 'capybara/email/rspec'
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara::Webkit.configure do |config|
+  # Enable debug mode. Prints a log of everything the driver is doing.
+  config.debug = false
+  config.ignore_ssl_errors
+
+  # Don't load images
+  config.skip_image_loading
+
+end
+
+Capybara.default_max_wait_time = 50
+Capybara.javascript_driver = :selenium
+Capybara.default_driver = :webkit
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'support/auth_helper'
 require 'support/user_profile_helper'
-require 'support/downloads'
 require 'support/firefox_driver'
 
 require 'rails_helper'
@@ -61,39 +60,6 @@ describe "My profile" do
   end
 end
 
-# describe "My bookings", js: true do
-#   include AuthHelper
-#   include ProfileAviaBookings
-#   include DownloadHelpers
-#
-#   user_mail = 'test@example.com'
-#   user_password = 'qwerty123'
-#
-#   before do
-#     visit('https://tripway.dev')
-#     auth_login(user_mail, user_password)
-#     open_my_orders
-#   end
-#
-#   it 'check first booking' do
-#     transition_to_booking_info
-#   end
-
-  # it 'check filter date-from/date-to' do
-  #   filter_by_date_trip('18182016')
-  #   clean_filter
-  # end
-  #
-  # it 'check filter code booking' do
-  #   filter_by_code('YKLBJL')
-  #   clean_filter
-  # end
-
-  # it 'check download invoice' do
-  #   check_booking('YKOB9C')
-  #   find('.avia_user_booking__control_link_for-download').click
-  # end
-# end
 
 describe 'My passengers' do
   include AuthHelper

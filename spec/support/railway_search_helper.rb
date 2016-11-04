@@ -33,7 +33,6 @@ module RailWaySearch
       break unless recomendations_not_available?
       date_departure = increase_date_departure(date_departure)
     end
-
     expect(page).to have_selector('[data-class="Railway.RecommendationsList"]')
     page.current_url
   end
@@ -44,6 +43,7 @@ module RailWaySearch
     else
       try_railway_search(city_departure, city_arrival, date_departure)
     end
+    expect(page).to have_selector('[data-class="Railway.RecommendationsList"]')
   end
 
   def recomendations_not_available?
@@ -53,5 +53,40 @@ module RailWaySearch
     else
       false
     end
+  end
+
+  def check_all_wagons_on_page_recommendation
+    # remove block search by correct parsing page recommendations
+    page.execute_script("$('.sticky_search__stick_block').remove()")
+    # find all variants in page recommendation
+    all('[data-role="variant_shortcut.select"]').each do |variant|
+      variant.click
+      expect(page).to have_selector('.wagon_template_container')
+      all('.wagon_list__item_number').each do |wagons_list__item|
+        if(wagons_list__item.visible?)
+          wagons_list__item.click
+          expect(page).not_to have_selector(".wagon_temlate_preloader")
+          wagon_container = find('.wagon_template_container')
+          # if wagon container doesn't contain drawing wagon make screenshot
+          unless wagon_container.has_selector?('.wagon_place.available')
+            screenshot_and_save_page
+            break
+          else
+            # get count available seats in list item and compare it with count available seats in wagon
+            count_available_seats_in_list_item = find('.wagons_list__item.selected .wagon_list__item_available_places').text.to_i
+            unless check_count_available_seats_in_wagon(count_available_seats_in_list_item)
+              screenshot_and_save_page
+              break
+            end
+          end
+        end
+      end
+    end
+  end
+
+  def check_count_available_seats_in_wagon(list_item_seats)
+    wagon = find('.wagon_template', visible: true)
+    count_seats_in_wagon = wagon.all('.wagon_place.available').count
+    list_item_seats.equal?(count_seats_in_wagon)
   end
 end

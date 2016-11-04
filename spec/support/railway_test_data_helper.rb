@@ -2,6 +2,7 @@ class DataRailwaySearch
   attr_accessor :departure_railway_city, :departure_railway_station, :departure_railway_code, :params_departure_location
   attr_accessor :arrival_railway_city, :arrival_railway_station, :arrival_railway_code, :params_arrival_location
   attr_accessor :date_railway_departure
+  attr_accessor :array_popular_directions
 
   def initialize
     @departure_railway_city = 'Киев'
@@ -21,6 +22,8 @@ class DataRailwaySearch
                                   code: @departure_railway_code }
 
     @date_railway_departure = Time.now.strftime("%d.%m.%Y")
+
+    @array_popular_directions = [['Киев', 'Харьков'], ['Киев', 'Одесса'], ['Киев', 'Львов'], ['Львов', 'Харьков'], ['Харьков', 'Одесса']]
   end
 end
 

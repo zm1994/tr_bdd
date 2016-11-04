@@ -57,7 +57,7 @@ describe 'Page avia order for round search' do
     auth_from_booking_page('test@test.ua', 'test123')
     # check after autorization will bу new search
     expect(page).to have_selector('.trip_search__progressbar_indicator_done')
-    check_aviability_lowcosts_and_redular
+    check_lowcosts_and_regular_recommendations
   end
 
   it 'check availability to autorization and choose first passenger passenger usual user in lowcost', retry: 3 do

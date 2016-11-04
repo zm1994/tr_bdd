@@ -12,8 +12,7 @@ module AviaBooking
 
   def open_booking_page(url_page_recommendation, type_recommendation = 'regular')
     visit(url_page_recommendation) if url_page_recommendation.length > 0 and page.current_url != url_page_recommendation
-    # pry.binding
-    expect(page).to have_selector('#avia-recommendations-filter')
+    # expect(page).to have_selector('#avia-recommendations-filter')
     #open booking page from first regular recommendation
     if(type_recommendation == 'regular')
       first('[data-kind="regular"] [data-role="avia_recommendation.select"]').click
@@ -99,14 +98,14 @@ module AviaBooking
     find('.avia_order_payer_company_name input').set payer[:juridical_name] unless payer[:juridical_name].nil?
     find('.company_registration_number input').set payer[:registration_number]
     find('avia_order_payer_email input').set payer[:email]
-    find('[data-class="PhoneInput"]').set payer[:phone]
+    find('#avia_order_payer_attributes_phone').set payer[:phone]
   end
 
   def input_data_payer_physical(payer)
     find('[for="avia_order_payer_attributes_payer_type_physical"]').click
     find('.avia_order_payer_full_name input').set payer[:full_name]
     find('.avia_order_payer_email input').set payer[:email]
-    find('[data-class="PhoneInput"]').set payer[:phone]
+    find('#avia_order_payer_attributes_phone').set payer[:phone]
   end
 
   def input_promocode(promo_code)
