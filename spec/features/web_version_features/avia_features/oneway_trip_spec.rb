@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'support/auth_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 require 'support/avia_booking_helper'
 require 'support/avia_search_helper'
 require 'support/avia_test_data_helper'
@@ -59,20 +59,29 @@ describe 'Form search' do
     fill_passenger(second_passenger, data_passengers.params_child)
     third_passenger = '#document_2'
     fill_passenger(third_passenger, data_passengers.params_infant)
-    # pry.binding
     input_data_payer_physical(payer.params_payer)
     try_booking_regular($url_recommendation_one_way, $url_page_booking_one_way_regular)
   end
 
   it 'check oneway fare rules ' do
-    if($url_recommendation_complex.length == 0)
-      $url_recommendation_complex = try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
+    if($url_recommendation_one_way.length == 0)
+      $url_recommendation_one_way = try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     else
-      visit($url_recommendation_complex)
+      visit($url_recommendation_one_way)
     end
 
     # find first fare rule end check content
-    first('.avia_recommendation__link').click
     check_fare_rules
+  end
+
+  it 'check avia oneway journey list modal windo' do
+    if($url_recommendation_one_way.length == 0)
+      $url_recommendation_one_way = try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
+    else
+      visit($url_recommendation_one_way)
+    end
+
+    # find first fare rule end check content
+    check_avia_journey_modal
   end
 end

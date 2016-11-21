@@ -114,6 +114,7 @@
                         registration_number: '12345678',
                         email: 'test@example.com',
                         phone: '+380234534545',
-                        full_name: 'TESTER' }
+                        full_name: 'TESTER',
+                        password: 'qwerty123'}
     end
   end

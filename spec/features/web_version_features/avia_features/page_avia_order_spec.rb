@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'support/auth_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 require 'support/avia_booking_helper'
 require 'support/avia_search_helper'
 require 'support/avia_test_data_helper'

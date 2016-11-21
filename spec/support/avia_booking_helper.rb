@@ -12,7 +12,6 @@ module AviaBooking
 
   def open_booking_page(url_page_recommendation, type_recommendation = 'regular')
     visit(url_page_recommendation) if url_page_recommendation.length > 0 and page.current_url != url_page_recommendation
-    # expect(page).to have_selector('#avia-recommendations-filter')
     #open booking page from first regular recommendation
     if(type_recommendation == 'regular')
       first('[data-kind="regular"] [data-role="avia_recommendation.select"]').click
@@ -43,10 +42,7 @@ module AviaBooking
         try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
         url_recommendation = page.current_url
     end
-    # if page.has_css?('.notify_message_layout-modal_dialog')
-    #   url_recommendation = ''
-    #   booking_page = ''
-    # end
+
     booking_page
   end
 
@@ -116,16 +112,19 @@ module AviaBooking
     find('.avia_order_form__selectable_list .avia_order_form__selectable_list_item:nth-of-type(1) label').click
   end
 
+  # this method for offline payment, which are default chosen
   def try_booking_regular(recommendation_url, page_booking_url)
     find('button.order_form__button_role-submit').click
     expect(page).to have_selector('.modal_dialog__preloader')
-    expect(page).not_to have_selector('.modal_dialog__preloader')
+    # expect(page).not_to have_selector('.modal_dialog__preloader')
     if page.has_css?('.notify_message_layout-modal_dialog')
       recommendation_url = ''
       page_booking_url = ''
     end
-    # pry.binding
-    expect(page).not_to have_selector('.notify_message_layout-modal_dialog')
-    expect(page).to have_selector('.bill-expiration-warning')
+
+    expect(page).to have_selector('.bill')
+
+    first('.bill_actions_list__action').click
+    expect(page).to have_selector('.avia_order')
   end
 end

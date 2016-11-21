@@ -77,34 +77,10 @@ module ProfileAviaBookings
   # end
 
   def open_booking_page(code_booking = '')
-    check_booking(code_booking)
-    expect(page).to have_selector('.avia_user_booking')
-    expect(page).to have_selector('.payment_gateways_block')
+    find('.orders_list__cell-for_code', contains: code_booking).click
+    expect(page).to have_selector('.avia_order')
   end
 
-  def checking_payment(number)
-    if find('.payment_gateway_list__item').count == 3
-      payment_choice = find("li:nth-of-type(#{number}).payment_gateway_list__item")
-      payment_choice.click
-      price_of_payment = (payment_choice.find('.price__amount').text).to_f
-      page_content = '' #this var check content on the redirect page of the payment
-
-    if payment_choice.have_content('Карта банка')
-      page_content = 'Liqpay'
-    elsif payment_choice.have_content('Приват24')
-      page_content = 'Приват24'
-    elsif payment_choice.have_content('Webmoney')
-      page_content = 'Webmoney'
-    end
-
-    find('.avia_user_booking__submit_button').click
-      expect(page).to have_content(page_content)
-    else
-      raise 'count payments are less than 3'
-    end
-
-    price_of_payment
-  end
 end
 
 module ProfileEditPassengers

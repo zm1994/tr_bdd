@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'support/auth_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 require 'support/mobile_avia_search_helper'
 require 'support/avia_test_data_helper'
 require 'support/mobile_avia_booking_helper'
@@ -48,34 +48,4 @@ describe 'Mobile search/booking oneway' do
     input_data_payer_physical(payer.params_payer)
     try_booking_regular($url_recommendation_one_way, $url_page_booking_one_way_regular)
   end
-
-  # it 'count all recommendations', js: true do
-  #   # pry.binding
-  #   unless($url_recommendation_one_way_mobile.length == 0)
-  #     visit($url_recommendation_one_way)
-  #   else
-  #    try_search_regular_and_lowcosts_mobile(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
-  #   end
-  #
-  #   counter_variants_mobile = all('.avia_recommendation').count
-  #   $url_recommendation_one_way_mobile = page.current_url
-  #       # replace /?mobile=1 on 0
-  #   root_path = $root_path_mobile_avia.sub '1', '0'
-  #   # reset mobile mode into web
-  #   visit(root_path)
-  #   # pry.binding
-  #   visit($url_recommendation_one_way_mobile)
-  #   expect(page).to have_selector('[data-class="Avia.RecommendationsList"]')
-  #   counter_variants_web = 0
-  #   count_sections_oneway = 0
-  #
-  #   # pry.binding
-  #   all('.avia_recommendation').each do |recommendation|
-  #     count_sections_oneway += recommendation.all('[data-section-index="0"] .section__variant').count
-  #     counter_variants_web += count_sections_oneway
-  #   end
-  #
-  #   expect(counter_variants_mobile == counter_variants_web).to be true
-  #   # puts counter_variants
-  # end
 end

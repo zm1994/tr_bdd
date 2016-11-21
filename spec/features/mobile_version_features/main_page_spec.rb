@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 require 'support/page_helper'
 
 

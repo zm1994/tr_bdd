@@ -62,8 +62,6 @@ module RailwayBooking
   end
 
   def try_booking
-    # click on check box agreement
-    find('.order_form__terms_label').click
     # click on submit button
     find('.railway_order_form__button').click
     expect(page).not_to have_selector('.notify_message_layout-modal_dialog')

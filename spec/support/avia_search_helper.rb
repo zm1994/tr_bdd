@@ -3,21 +3,8 @@ module AviaSearch
   $url_recommendation_round = ""
   $url_recommendation_complex = ""
 
-  def try_search_regular_and_lowcosts(type_avia_search, params_avia_location, params_flight_dates, params_passengers, with_flexible_dates = false)
-    # start 5 tries if search was failed
-    5.times do
-      start_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers,with_flexible_dates)
-      # expect(page).to have_selector('.avia_recommendations__lowcosts_preloader')
-      # expect(page).not_to have_selector('.avia_recommendations__lowcosts_preloader')
-      recommendation_list = find('[data-class="Avia.RecommendationsList"]')
-      break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]')
-      # break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]') and recommendation_list.has_selector?('.avia_recommendation[data-kind="lowcost"]')
-      params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
-      params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
-    end
-  end
-
-  def try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers, with_flexible_dates = false)
+  def try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers,
+                         with_flexible_dates = false)
     # start 5 tries if search was failed
     5.times do
       start_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers, with_flexible_dates)
@@ -28,13 +15,34 @@ module AviaSearch
     end
   end
 
-  def start_avia_search(type_avia_search, papams_avia_location, params_flight_dates, params_passengers, with_flexible_dates)
+  def try_search_regular_and_lowcosts(type_avia_search, params_avia_location, params_flight_dates, params_passengers,
+                                      with_flexible_dates = false)
+    # start 5 tries if search was failed
+    5.times do
+      start_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers,
+                        with_flexible_dates)
+
+      expect(page).to have_selector('.avia_recommendations__lowcosts_preloader')
+      expect(page).not_to have_selector('.avia_recommendations__lowcosts_preloader')
+
+      recommendation_list = find('[data-class="Avia.RecommendationsList"]')
+      break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]') and
+          recommendation_list.has_selector?('.avia_recommendation[data-kind="lowcost"]')
+
+      # increase date departure and arrival
+      params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
+      params_flight_dates[:date_arrival] = increase_date_flight(params_flight_dates[:date_arrival])
+    end
+  end
+
+  def start_avia_search(type_avia_search, papams_avia_location, params_flight_dates, params_passengers,
+                        with_flexible_dates)
     if(type_avia_search == 'one_way')
-      search_one_way_trip(papams_avia_location, params_flight_dates)
+      set_params_oneway_trip(papams_avia_location, params_flight_dates)
     elsif(type_avia_search == 'round_trip')
-      search_round_trip(papams_avia_location, params_flight_dates)
+      set_params_round_trip(papams_avia_location, params_flight_dates)
     elsif(type_avia_search == 'complex_trip')
-      search_complex_trip(papams_avia_location, params_flight_dates)
+      set_params_complex_trip(papams_avia_location, params_flight_dates)
     end
 
     choose_passengers(params_passengers)
@@ -42,18 +50,18 @@ module AviaSearch
     find('.avia_search_form__submit [type="submit"]').click
   end
 
-  def search_one_way_trip(papams_avia_location, params_flight_dates)
+
+  def set_params_oneway_trip(papams_avia_location, params_flight_dates)
     input_departure_location(papams_avia_location[:departure_avia_city], papams_avia_location[:departure_avia_code])
     input_arrival_location(papams_avia_location[:arrival_avia_city], papams_avia_location[:arrival_avia_code])
 
     # choose oneway in datepicker and set date in input field
-
     page.execute_script("$('#avia_search_segments_attributes_0_departure_date').val('#{params_flight_dates[:date_departure]}')")
     find('.avia_search_segments_departure_date').click
     find('.datepicker_switcher__item-oneway').click
   end
 
-  def search_round_trip(papams_avia_location, params_flight_dates)
+  def set_params_round_trip(papams_avia_location, params_flight_dates)
     input_departure_location(papams_avia_location[:departure_avia_city], papams_avia_location[:departure_avia_code])
     input_arrival_location(papams_avia_location[:arrival_avia_city], papams_avia_location[:arrival_avia_code])
 
@@ -61,7 +69,7 @@ module AviaSearch
     page.execute_script("$('#avia_search_segments_attributes_0_return_date').val('#{params_flight_dates[:date_arrival]}')")
   end
 
-  def search_complex_trip(papams_avia_location, params_flight_dates)
+  def set_params_complex_trip(papams_avia_location, params_flight_dates)
     if page.has_css?('.avia_recommendations__complex_routes_wrapper')
       find('.complex_routes__change_search_button').click
     else
@@ -123,7 +131,7 @@ module AviaSearch
 
   def check_lowcosts_and_regular_recommendations
     expect(page).to have_selector('.avia_recommendation[data-kind="regular"]')
-    # expect(page).to have_selector('.avia_recommendation[data-kind="lowcost"]')
+    expect(page).to have_selector('.avia_recommendation[data-kind="lowcost"]')
   end
 
   def check_aviability_regular_recommendations
@@ -131,6 +139,7 @@ module AviaSearch
   end
 
   def check_fare_rules
+    first('[data-modal="Загружаем правила тарифа"]').click
     # get all fare rules in order
     expect(page).to have_selector('.modal_dialog__content')
 
@@ -140,5 +149,10 @@ module AviaSearch
       # check that text rule isn't empty
       expect(fare_rule.text.length > 0).to be true
     end
+  end
+
+  def check_avia_journey_modal
+    first('[data-role="avia_recommendation.details"]').click
+    expect(page).to have_selector('.avia_journey_layout-modal_dialog')
   end
 end

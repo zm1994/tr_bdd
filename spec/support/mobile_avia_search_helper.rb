@@ -22,12 +22,12 @@ module MobileAviaSearch
   def start_mobile_avia_search(type_avia_search, papams_avia_location, params_flight_dates, params_passengers)
 
     if(type_avia_search == 'one_way')
-      search_one_way_trip(papams_avia_location, params_flight_dates)
+      set_params_oneway_trip(papams_avia_location, params_flight_dates)
       # go back from datepicker modal window
       close_modal_window
       expect(page).to have_selector('.avia_search_form__theme-mobile_homepage')
     elsif(type_avia_search == 'round_trip')
-      search_round_trip(papams_avia_location, params_flight_dates)
+      set_params_round_trip(papams_avia_location, params_flight_dates)
     end
     # pry.binding
     choose_passengers(params_passengers)

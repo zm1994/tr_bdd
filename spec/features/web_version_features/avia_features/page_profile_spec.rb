@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'support/auth_helper'
 require 'support/user_profile_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 
 require 'rails_helper'
 

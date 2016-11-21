@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 require 'support/railway_search_helper'
 require 'support/railway_test_data_helper'
 require 'support/railway_booking_helper'

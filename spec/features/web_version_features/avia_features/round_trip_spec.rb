@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'support/auth_helper'
-require 'support/firefox_driver'
+require 'support/root_path_helper'
 require 'support/avia_booking_helper'
 require 'support/avia_search_helper'
 require 'support/avia_test_data_helper'
@@ -26,13 +26,12 @@ describe 'Form search' do
 
   it'search round_trip IEV-WAW' do
     try_search_regular_and_lowcosts(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
-    puts(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     check_lowcosts_and_regular_recommendations
     $url_recommendation_round = page.current_url
   end
 
   it'check round_trip +-3days from page recommendation', retry: 3 do
-    unless($url_recommendation_round.length == 0)
+    unless($url_recommendation_round.empty?)
       visit($url_recommendation_round)
       find('[for="avia_search_flexible_date"]').click
       find('.avia_search_form__submit [type="submit"]').click
@@ -67,14 +66,24 @@ describe 'Form search' do
   end
 
   it 'check round fare rules ' do
-    if($url_recommendation_complex.length == 0)
+    if($url_recommendation_round.empty?)
       $url_recommendation_complex = try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     else
       visit($url_recommendation_complex)
     end
 
     # find first fare rule end check content
-    first('.avia_recommendation__link').click
+    check_fare_rules
+  end
+
+  it 'check round journey list modal window' do
+    if($url_recommendation_round.empty?)
+      $url_recommendation_round = try_search_regular(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
+    else
+      visit($url_recommendation_round)
+    end
+
+    # find first fare rule end check content
     check_fare_rules
   end
 end
