@@ -7,8 +7,8 @@ require 'support/mobile_avia_booking_helper'
 require 'support/mobile_booking_service_helper'
 
 describe 'Mobile search/booking oneway' do
-  include MobileAviaSearch
-  include MobileAviaBooking
+  # include MobileAviaSearch
+  # include MobileAviaBooking
   include MobileBookingService
 
   search_oneway = DataOneWaySearch.new
