@@ -3,6 +3,9 @@ require 'support/avia_search_helper'
 module MobileAviaSearch
   include AviaSearch
 
+  $url_mobile_recommendation_one_way = ""
+  $url_mobile_recommendation_round = ""
+
   def try_search_regular_and_lowcosts_mobile(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     # start 5 tries if search was failed
     5.times do
@@ -39,5 +42,18 @@ module MobileAviaSearch
 
   def close_modal_window
     find('.mobile_page__header_close_btn').click
+  end
+
+  def check_mobile_fare_rules
+    first('.section__fare_rules_link').click
+    # get all fare rules in order
+    expect(page).to have_selector('.modal_dialog__content')
+
+    all('.direction_layout-modal_dialog').each do |fare_tab|
+      fare_tab.click
+      fare_rule = find('.avia_terms__content pre')
+      # check that text rule isn't empty
+      expect(fare_rule.text.length > 0).to be true
+    end
   end
 end

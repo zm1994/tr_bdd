@@ -7,8 +7,8 @@ require 'support/mobile_avia_booking_helper'
 require 'support/mobile_booking_service_helper'
 
 describe 'Mobile search/booking round' do
-  include MobileAviaSearch
-  include MobileAviaBooking
+  # include MobileAviaSearch
+  # include MobileAviaBooking
   include MobileBookingService
 
   search_round = DataRoundSearch.new
@@ -31,3 +31,4 @@ describe 'Mobile search/booking round' do
     booking_mobile_round_trip(search_round)
   end
 end
+

@@ -10,38 +10,30 @@ describe 'Form search' do
   include AviaSearch
   include AviaBooking
   include AviaBookingService
-  # include TestData
 
-  # search = DataComplexSearch.new
-  # type_avia_search = search.type_avia_search
-  # params_avia_location = search.params_avia_location
-  # params_flight_dates = search.params_flight_dates
-  # params_passengers = search.params_passengers
-  # data_passengers = Passengers.new
-  # payer = Payer.new
+  search_complex = DataComplexSearch.new
 
   before do
     visit($root_path_avia)
+    search_complex.params_flight_dates[:date_departure] = increase_date_flight(search_complex.params_flight_dates[:date_departure])
+    search_complex.params_flight_dates[:date_arrival] = increase_date_flight(search_complex.params_flight_dates[:date_arrival])
   end
 
   it'search complex trip IEV-WAW', retry: 3 do
-    search_complex_trip
-    $url_recommendation_complex = page.current_url
+    search_complex_trip(search_complex)
   end
 
   it 'open complex booking page for regular', retry: 3 do
-    open_booking_page_complex
-    expect($url_page_booking_complex_regular).not_to be(nil)
+    open_booking_page_complex(search_complex)
   end
 
   it 'make complex booking with 3 passengers', retry: 3 do
-    booking_complex_trip
+    booking_complex_trip(search_complex)
   end
 
   it 'check complex fare rules ' do
     if($url_recommendation_complex.empty?)
-      search_complex_trip
-      $url_recommendation_complex = page.current_url
+      search_complex_trip(search_complex)
     else
       visit($url_recommendation_complex)
     end
@@ -52,8 +44,7 @@ describe 'Form search' do
 
   it 'check complex journey list modal window' do
     if($url_recommendation_complex.empty?)
-      search_complex_trip
-      $url_recommendation_complex = page.current_url
+      search_complex_trip(search_complex)
     else
       visit($url_recommendation_complex)
     end

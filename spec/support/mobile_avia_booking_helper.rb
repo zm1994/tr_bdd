@@ -5,10 +5,17 @@ module MobileAviaBooking
   include AviaBooking
   include MobileAviaSearch
 
+  $url_mobile_page_booking_one_way_regular = ''
+  $url_mobile_page_booking_round_regular = ''
+  $url_mobile_page_booking_complex_regular = ''
+  $url_mobile_page_booking_one_way_lowcost = ''
+  $url_mobile_page_booking_round_lowcost = ''
+  $url_mobile_page_booking_complex_lowcost= ''
+
   def try_open_booking_page_for_regular_mobile(url_recommendation, type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     booking_page = ''
     5.times do
-      if(url_recommendation.length == 0) # if there is no url recommendation first start search
+      if(url_recommendation.empty?) # if there is no url recommendation first start search
         try_search_regular_and_lowcosts_mobile(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
         url_recommendation = page.current_url
       end
@@ -30,7 +37,7 @@ module MobileAviaBooking
   def try_open_booking_page_for_lowcost_mobile(url_recommendation, type_avia_search, params_avia_location, params_flight_dates, params_passengers)
     booking_page = ''
     5.times do
-      if(url_recommendation.length == 0) # if there is no url recommendation first start search
+      if(url_recommendation.empty?) # if there is no url recommendation first start search
         try_search_regular_and_lowcosts_mobile(type_avia_search, params_avia_location, params_flight_dates, params_passengers)
         url_recommendation = page.current_url
       end
@@ -50,9 +57,8 @@ module MobileAviaBooking
   end
 
   def open_booking_page_mobile(url_page_recommendation, type_recommendation = 'regular')
-    visit(url_page_recommendation) if url_page_recommendation.length > 0 and page.current_url != url_page_recommendation
-    # pry.binding
-    # expect(page).to have_selector('#avia-recommendations-filter')
+    visit(url_page_recommendation) unless url_page_recommendation.empty? and page.current_url != url_page_recommendation
+
     #open booking page from first regular recommendation
     if(type_recommendation == 'regular')
       first('[data-kind="regular"][data-role="avia_recommendation.select"]').click
@@ -61,7 +67,9 @@ module MobileAviaBooking
     end
     expect(page).to have_selector('.modal_dialog__preloader')
     expect(page).not_to have_selector('.modal_dialog__preloader')
-    # return '' if booking_unavailable?
+    # continue booking if price has been changed
+
+    continue_booking
     # continue_booking_if_price_changed
     expect(page).to have_selector('.avia_journey__sections_list')
     # return '' if page.has_css?('.notify_message_layout-modal_dialog')

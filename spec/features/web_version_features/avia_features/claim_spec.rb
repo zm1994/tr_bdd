@@ -17,8 +17,7 @@ describe 'Claim' do
 
   user_mail = 'test@example.com'
   user_password = 'qwerty123'
-
-  # include TestData
+  search_round = DataRoundSearch.new
 
   before do
     visit($root_path_avia)
@@ -31,13 +30,16 @@ describe 'Claim' do
       open_my_orders
       open_booking_page($round_trip_booking_regular)
       else
-      booking_round_trip
+      booking_round_trip(search_round)
     end
     # got to the claim form
     find('.order__claims_link').click
     expect(page).to have_selector('.column_width-narrow')
-    find('.column_width-wide>div.active textarea.input').set 'Test'
+    find('.column_width-wide>div.active textarea.input').set 'Test request'
     find('.column_width-wide>div.active [type="submit"]').click
+    if(page.has_css?('.confirmation_message__action_link_layout-modal_dialog'))
+      find('[data-confirmation-action="confirm"]').click
+    end
     expect(page).to have_selector('.notify_message')
     find('.notify_message__action_link').click
     chat_area = find('.column_width-wide>div.active .order_claim_messages')

@@ -6,6 +6,7 @@ describe 'Main page' do
   before do
     visit($root_path_avia)
   end
+
   it'check following a link Booking.com' do
     find('.header_menu__link[title="Отели"]').click
     # check link to tripway site in new opened tab

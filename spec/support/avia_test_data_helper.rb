@@ -86,22 +86,24 @@
     attr_accessor :params_adult, :params_child, :params_infant
 
     def initialize
+      random = Random.new
+
       @params_adult = { first_name: 'ANDREY',
                         last_name: 'ANDREEV',
                         birthday: '12.01.1980',
-                        passport_number: 'CE7489384',
+                        passport_number: 'CL' + random.rand(10000...900000).to_s,
                         passport_expired: '20.12.2017' }
 
       @params_child = { first_name:  'SERGEY',
                         last_name:  'ANDREEV',
                         birthday: '15.05.2008',
-                        passport_number: 'VM9854755',
+                        passport_number: 'CL' + random.rand(10000...900000).to_s,
                         passport_expired: '10.10.2019' }
 
       @params_infant = { first_name: 'ALEXANDR',
                          last_name: 'ANDREEV',
                          birthday: '09.04.2016',
-                         passport_number: 'CE7489384',
+                         passport_number: 'CK' + random.rand(10000...900000).to_s,
                          passport_expired: '20.12.2017' }
     end
   end

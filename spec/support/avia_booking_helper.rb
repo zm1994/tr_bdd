@@ -20,8 +20,8 @@ module AviaBooking
     end
     expect(page).to have_selector('.modal_dialog__preloader')
     expect(page).not_to have_selector('.modal_dialog__preloader')
-    # return '' if booking_unavailable?
     # continue_booking_if_price_changed
+    continue_booking
     expect(page).to have_selector('.avia_journey__sections_list')
     # return '' if page.has_css?('.notify_message_layout-modal_dialog')
     page.current_url
@@ -68,17 +68,6 @@ module AviaBooking
     booking_page
   end
 
-  def booking_unavailable?
-    # if(page.has_css?(''))
-    false
-  end
-
-  def continue_booking_if_price_changed
-    if(page.has_css?('.notify_message_layout-modal_dialog'))
-      find('[onclick="modal.reset();"]').click if(page.has_css?('[onclick="modal.reset();"]'))
-    end
-  end
-
   def fill_passenger(block_passengers, data_passengers)
     find("#{block_passengers} .avia_order_journey_item_element_documents_firstname input").set data_passengers[:first_name]
     find("#{block_passengers} .avia_order_journey_item_element_documents_lastname input").set data_passengers[:last_name]
@@ -117,14 +106,16 @@ module AviaBooking
     find('button.order_form__button_role-submit').click
     expect(page).to have_selector('.modal_dialog__preloader')
     # expect(page).not_to have_selector('.modal_dialog__preloader')
-    if page.has_css?('.notify_message_layout-modal_dialog')
-      recommendation_url = ''
-      page_booking_url = ''
-    end
-
+    continue_booking
     expect(page).to have_selector('.bill')
 
     first('.bill_actions_list__action').click
     expect(page).to have_selector('.avia_order')
+  end
+
+  def continue_booking
+    if page.has_css?('.notify_message__action_link_display_as-button')
+      find('.notify_message__action_link_display_as-button').click
+    end
   end
 end

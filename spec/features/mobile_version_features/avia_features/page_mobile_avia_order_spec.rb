@@ -8,8 +8,8 @@ require 'support/mobile_avia_booking_helper'
 require 'support/mobile_booking_service_helper'
 
 describe 'Mobile page avia order for round search' do
-  include MobileAviaSearch
-  include MobileAviaBooking
+  # include MobileAviaSearch
+  # include MobileAviaBooking
   include AuthHelper
   include MobileBookingService
 
@@ -17,8 +17,8 @@ describe 'Mobile page avia order for round search' do
 
   before do
     visit($root_path_mobile_avia)
-    if $url_page_booking_round_regular.length > 0
-      visit($url_page_booking_round_regular)
+    unless $url_mobile_page_booking_round_regular.empty?
+      visit($url_mobile_page_booking_round_regular)
     else
       open_mobile_booking_page_round(search_round)
     end
@@ -27,7 +27,7 @@ describe 'Mobile page avia order for round search' do
   it 'check regular booking without input data', retry: 3 do
     find('.order_form__button_role-submit').click
     expect(page).to have_selector('.field_with_errors')
-    expect(page.current_url == $url_page_booking_round_regular).to be(true)
+    expect(page.current_url == $url_mobile_page_booking_round_regular).to be(true)
   end
 
   it 'check availability to autorization and choose first passenger passenger usual user in regular booking', retry: 3 do

@@ -22,12 +22,13 @@ module AviaSearch
       start_avia_search(type_avia_search, params_avia_location, params_flight_dates, params_passengers,
                         with_flexible_dates)
 
-      expect(page).to have_selector('.avia_recommendations__lowcosts_preloader')
-      expect(page).not_to have_selector('.avia_recommendations__lowcosts_preloader')
+      # expect(page).to have_selector('.avia_recommendations__lowcosts_preloader')
+      # expect(page).not_to have_selector('.avia_recommendations__lowcosts_preloader')
 
       recommendation_list = find('[data-class="Avia.RecommendationsList"]')
-      break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]') and
-          recommendation_list.has_selector?('.avia_recommendation[data-kind="lowcost"]')
+      # break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]') and
+      #     recommendation_list.has_selector?('.avia_recommendation[data-kind="lowcost"]')
+      break if recommendation_list.has_selector?('.avia_recommendation[data-kind="regular"]')
 
       # increase date departure and arrival
       params_flight_dates[:date_departure] = increase_date_flight(params_flight_dates[:date_departure])
@@ -131,7 +132,7 @@ module AviaSearch
 
   def check_lowcosts_and_regular_recommendations
     expect(page).to have_selector('.avia_recommendation[data-kind="regular"]')
-    expect(page).to have_selector('.avia_recommendation[data-kind="lowcost"]')
+    # expect(page).to have_selector('.avia_recommendation[data-kind="lowcost"]')
   end
 
   def check_aviability_regular_recommendations
@@ -139,7 +140,7 @@ module AviaSearch
   end
 
   def check_fare_rules
-    first('[data-modal="Загружаем правила тарифа"]').click
+    first('.avia_recommendation__link').click
     # get all fare rules in order
     expect(page).to have_selector('.modal_dialog__content')
 
