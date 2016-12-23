@@ -105,15 +105,22 @@ module AviaBooking
   def try_booking_regular(recommendation_url, page_booking_url)
     find('button.order_form__button_role-submit').click
     expect(page).to have_selector('.modal_dialog__preloader')
-    # expect(page).not_to have_selector('.modal_dialog__preloader')
     continue_booking
-    expect(page).to have_selector('.bill')
+    return_from_payment_gateway
+  end
 
-    first('.bill_actions_list__action').click
+  def return_from_payment_gateway
+    # return from payment system after making booking on page with created booking
+    if page.has_css?('.bill')
+      first('.bill_actions_list__action').click
+    elsif page.has_css?('.cancel__payment')
+      find('.cancel__payment a').click
+    end
     expect(page).to have_selector('.avia_order')
   end
 
   def continue_booking
+    # continue booking if there is modal message about changing booking price
     if page.has_css?('.notify_message__action_link_display_as-button')
       find('.notify_message__action_link_display_as-button').click
     end
