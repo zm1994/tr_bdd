@@ -1,11 +1,8 @@
 require 'support/avia_booking_helper'
 require 'support/avia_search_helper'
 require 'support/avia_test_data_helper'
-require 'support/user_profile_helper'
 
 module AviaBookingService
-  include AuthHelper
-  include ProfileAviaBookings
   include AviaSearch
   include AviaBooking
 
