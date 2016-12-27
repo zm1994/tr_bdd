@@ -15,6 +15,7 @@ describe 'Form search' do
 
   before do
     visit($root_path_avia)
+    puts search_oneway.params_flight_dates[:date_departure]
     search_oneway.params_flight_dates[:date_departure] = increase_date_flight(search_oneway.params_flight_dates[:date_departure])
     search_oneway.params_flight_dates[:date_arrival] = increase_date_flight(search_oneway.params_flight_dates[:date_arrival])
   end
@@ -42,7 +43,7 @@ describe 'Form search' do
     open_booking_page_oneway(search_oneway)
   end
 
-  it 'make one_way booking with 3 passengers', retry: 3  do
+  it 'make one_way booking with 3 passengers', retry: 3 do
     booking_oneway_trip(search_oneway)
   end
 

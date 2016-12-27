@@ -1,4 +1,5 @@
 require 'support/avia_search_helper'
+# require 'rails_helper'
 
 module AviaBooking
   include AviaSearch

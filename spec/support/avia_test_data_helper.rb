@@ -1,3 +1,5 @@
+require 'active_support/time'
+
   class DataOneWaySearch
     attr_accessor :type_avia_search, :departure_city, :departure_avia_code, :arrival_city, :arrival_avia_code
     attr_accessor :time_departure, :time_arrive, :string_format_date_dep, :string_format_date_arr

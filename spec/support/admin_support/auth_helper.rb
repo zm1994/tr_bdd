@@ -1,7 +1,6 @@
 module AdminAuthHelper
 
-  $email_admin = ""
-  $password_admin = ""
+
 
   def log_in_admin_panel(email, password)
     find('input#admin_user_email').set email
