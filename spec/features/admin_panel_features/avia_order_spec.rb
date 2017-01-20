@@ -15,6 +15,5 @@ describe 'Tests for order in admin panel' do
   it 'open round trip order in admin', retry: 3 do
     open_round_trip_order_in_admin
   end
-
 end
 
