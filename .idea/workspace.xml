@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68c4b5e7-a855-46d3-915b-9f2358003c6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/support/ajax_waiter.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_spec.rb" afterPath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/avia_order_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_bills_tab_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_incomes_tab_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tasks_tab_spec.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/avia_order_spec.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_database_name_test" afterPath="$PROJECT_DIR$/my_database_name_test" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_database_name_test2" afterPath="$PROJECT_DIR$/my_database_name_test2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_database_name_test4" afterPath="$PROJECT_DIR$/my_database_name_test4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bdd.iml" afterPath="$PROJECT_DIR$/.idea/bdd.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_database_name_test3" afterPath="$PROJECT_DIR$/my_database_name_test3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb" afterPath="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb" afterPath="$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/support/admin_support/avia_order_service_helper.rb" afterPath="$PROJECT_DIR$/spec/support/admin_support/avia_order_service_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/support/admin_support/order_helper.rb" afterPath="$PROJECT_DIR$/spec/support/admin_support/order_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/support/admin_support/root_path_helper.rb" afterPath="$PROJECT_DIR$/spec/support/admin_support/root_path_helper.rb" />
@@ -43,41 +54,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="root_path_helper.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="root_path_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/support/admin_support/root_path_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.032608695">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth_helper.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="auth_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="root_path_helper.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/support/root_path_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authorization_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/authorization_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.047923323">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,17 +78,7 @@
         <entry file="file://$PROJECT_DIR$/spec/support/admin_support/avia_order_service_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avia_order_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/avia_order_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -107,17 +88,37 @@
         <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax_waiter.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/support/ajax_waiter.rb">
+      <file leaf-file-name="order_bills_tab_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_bills_tab_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_incomes_tab_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_incomes_tab_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_tasks_tab_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tasks_tab_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -127,17 +128,46 @@
         <entry file="file://$PROJECT_DIR$/spec/support/admin_support/order_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="29" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="29" />
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="20" />
+              <folding>
+                <element signature="e#23#147#0" expanded="false" />
+                <element signature="e#291#365#0" expanded="false" />
+                <element signature="e#369#443#0" expanded="false" />
+                <element signature="e#447#521#0" expanded="false" />
+                <element signature="e#653#711#0" expanded="false" />
+                <element signature="e#715#1332#0" expanded="false" />
+                <element signature="e#1336#1483#0" expanded="false" />
+                <element signature="e#1487#1572#0" expanded="false" />
+                <element signature="e#1576#1701#0" expanded="false" />
+                <element signature="e#1705#1829#0" expanded="false" />
+                <element signature="e#1833#1960#0" expanded="false" />
+                <element signature="e#1964#2019#0" expanded="false" />
+                <element signature="e#2023#2181#0" expanded="false" />
+                <element signature="e#2185#2346#0" expanded="false" />
+                <element signature="e#2350#2525#0" expanded="false" />
+                <element signature="e#2529#2870#0" expanded="false" />
+                <element signature="e#2874#3046#0" expanded="false" />
+                <element signature="e#3050#3223#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="round_trip_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/features/web_version_features/avia_features/round_trip_spec.rb">
+      <file leaf-file-name="rails_helper.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -151,10 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/spec/support/downloads.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/spec/support/firefox_driver.rb" />
-        <option value="$PROJECT_DIR$/spec/features/web_version_features/avia_features/autorization_spec.rb" />
         <option value="$PROJECT_DIR$/spec/features/web_version_features/avia_features/page_profile_spec.rb" />
         <option value="$PROJECT_DIR$/spec/support/railway_booking_helper.rb" />
         <option value="$PROJECT_DIR$/spec/features/web_version_features/railway_features/railway_booking_spec.rb" />
@@ -188,7 +214,6 @@
         <option value="$PROJECT_DIR$/spec/features/admin_panel_features/authorization_spec.rb" />
         <option value="$PROJECT_DIR$/spec/support/avia_booking_service_helper.rb" />
         <option value="$PROJECT_DIR$/spec/support/avia_test_data_helper.rb" />
-        <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
         <option value="$PROJECT_DIR$/spec/features/web_version_features/avia_features/oneway_trip_spec.rb" />
         <option value="$PROJECT_DIR$/spec/support/avia_booking_helper.rb" />
         <option value="$PROJECT_DIR$/spec/features/admin_panel_features/test.rb" />
@@ -197,11 +222,16 @@
         <option value="$PROJECT_DIR$/spec/support/root_path_helper.rb" />
         <option value="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/avia_order_spec.rb" />
         <option value="$PROJECT_DIR$/spec/support/ajax_waiter.rb" />
-        <option value="$PROJECT_DIR$/spec/support/admin_support/avia_order_service_helper.rb" />
-        <option value="$PROJECT_DIR$/spec/support/admin_support/order_helper.rb" />
-        <option value="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_bills_tab_spec.rb" />
         <option value="$PROJECT_DIR$/spec/support/admin_support/root_path_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/spec/support/admin_support/avia_order_service_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_incomes_tab_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/support/admin_support/order_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tasks_tab_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb" />
       </list>
     </option>
   </component>
@@ -218,10 +248,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-66" />
-    <option name="y" value="102" />
-    <option name="width" value="1907" />
-    <option name="height" value="1017" />
+    <option name="width" value="1906" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -340,32 +368,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web_version_features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bdd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bdd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web_version_features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avia_features" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -528,6 +530,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -837,21 +840,21 @@
     <option name="totallyTimeSpent" value="1165000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-66" y="102" width="1907" height="1017" extended-state="1" />
+    <frame x="0" y="0" width="1906" height="1045" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2490804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24605678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3302564" sideWeight="0.4893843" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.5084926" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.49150744" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.49150744" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3305174" sideWeight="0.4893843" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -878,20 +881,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.ru">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_database_name_test3">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -927,24 +916,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1102,13 +1077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/support/auth_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1128,13 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/support/avia_booking_service_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1170,7 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,7 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,22 +1145,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/avia_order_spec.rb">
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding />
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/support/avia_booking_service_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/authorization_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <caret line="93" column="25" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1209,15 +1189,23 @@
     <entry file="file://$PROJECT_DIR$/spec/support/admin_support/avia_order_service_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/support/admin_support/order_helper.rb">
+    <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_bills_tab_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="29" />
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_incomes_tab_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1225,22 +1213,57 @@
     <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tab_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb">
+    <entry file="file://$PROJECT_DIR$/spec/support/admin_support/order_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#23#147#0" expanded="false" />
+            <element signature="e#291#365#0" expanded="false" />
+            <element signature="e#369#443#0" expanded="false" />
+            <element signature="e#447#521#0" expanded="false" />
+            <element signature="e#653#711#0" expanded="false" />
+            <element signature="e#715#1332#0" expanded="false" />
+            <element signature="e#1336#1483#0" expanded="false" />
+            <element signature="e#1487#1572#0" expanded="false" />
+            <element signature="e#1576#1701#0" expanded="false" />
+            <element signature="e#1705#1829#0" expanded="false" />
+            <element signature="e#1833#1960#0" expanded="false" />
+            <element signature="e#1964#2019#0" expanded="false" />
+            <element signature="e#2023#2181#0" expanded="false" />
+            <element signature="e#2185#2346#0" expanded="false" />
+            <element signature="e#2350#2525#0" expanded="false" />
+            <element signature="e#2529#2870#0" expanded="false" />
+            <element signature="e#2874#3046#0" expanded="false" />
+            <element signature="e#3050#3223#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/features/admin_panel_features/avia_order_section/order_tasks_tab_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/support/admin_support/root_path_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032608695">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/support/admin_support/auth_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047923323">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>

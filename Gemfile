@@ -31,19 +31,21 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'therubyracer', platforms: :ruby
 gem 'sprockets', '3.6.3'
+gem 'capybara', '~> 2.7', '>= 2.7.1'
+gem 'capybara-webkit', '~> 1.12'
+gem 'selenium-webdriver', '~> 3.0', '>= 3.0.5'
+gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 
 group :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
   gem 'poltergeist'
   gem 'pry'
   gem 'launchy'
   gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'capybara-screenshot'
-  gem 'selenium-webdriver'
+
   gem "parallel_tests"
   gem 'database_cleaner'
-  gem "capybara-webkit"
+
   gem 'email_spec'
   gem 'capybara-email'
   gem 'rspec-retry'

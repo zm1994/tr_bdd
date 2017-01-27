@@ -25,7 +25,9 @@ module AdminOrderService
       visit($root_path_admin_orders)
       find_order_in_admin(order_name)
       order_status = get_order_status
-      order_status.equal?('ЗАВЕРШЕН') || order_status.equal?('ПРОСРОЧЕН') || order_status.equal?('ОТМЕНЕН') ? true: false
+      #  order isnt available if it has been paid fully or have status
+      order_paid_in_full? || order_status == 'ЗАВЕРШЕН' || order_status == 'ПРОСРОЧЕН' ||
+          order_status == 'ОТМЕНЕН' ? false: true
     else
       false
     end
