@@ -12,11 +12,12 @@ describe 'Tests for order in admin panel' do
   before do
     visit($root_path_admin)
     log_in_admin_panel($email_admin, $password_admin)
+    open_round_trip_order_in_admin
+    open_order_tab
   end
 
   it 'makes full payment manually' do
-    open_round_trip_order_in_admin
-    amount_to_pay = get_order_amount
+    amount_to_pay = get_amount_to_pay
     pay_gateway = get_current_payment_gateway
     open_bills_tab
     set_payment(amount_to_pay, pay_gateway, true)
@@ -26,8 +27,7 @@ describe 'Tests for order in admin panel' do
   end
 
   it 'makes payment manually and delete payment' do
-    open_round_trip_order_in_admin
-    amount_to_pay = get_order_amount
+    amount_to_pay = get_amount_to_pay
     pay_gateway = get_current_payment_gateway
     open_bills_tab
     set_payment(amount_to_pay, pay_gateway, true)

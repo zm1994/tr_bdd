@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'support/admin_support/auth_helper'
 require 'support/admin_support/root_path_helper'
 
-describe 'Authorization in admin panel' do
+describe 'Tests for administrators in admin' do
   include AdminAuthHelper
 
   admin_email = ''

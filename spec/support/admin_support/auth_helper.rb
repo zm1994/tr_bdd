@@ -2,7 +2,6 @@ module AdminAuthHelper
 
 
 
-
   def log_in_admin_panel(email, password)
     find('input#admin_user_email').set email
     find('input#admin_user_password').set password

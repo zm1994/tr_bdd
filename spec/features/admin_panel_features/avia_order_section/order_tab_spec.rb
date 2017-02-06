@@ -75,10 +75,10 @@ describe 'Tests for order in admin panel' do
   it 'change type payment gateway to online gateway' do
     init_bill = get_current_bill
     open_order_tools_tab
-    select('Карта банка', from: 'switch_payment_gateway[id]')
+    select('Webmoney', from: 'switch_payment_gateway[id]')
     find('[value="Изменить"]').click
     wait_for_ajax
-    expect(get_current_payment_gateway == 'Карта банка').to be true
+    expect(get_current_payment_gateway == 'Webmoney').to be true
     expect(get_commission_gateway > 0).to be true
     expect(get_current_bill - 1 == init_bill).to be true
   end

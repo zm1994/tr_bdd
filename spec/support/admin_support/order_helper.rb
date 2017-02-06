@@ -1,6 +1,5 @@
 module OrderHelper
 
-
   def find_order_in_admin(order_name)
     find('a', text: order_name).click
     expect(page).to have_content(order_name)
@@ -36,6 +35,10 @@ module OrderHelper
 
   def open_bills_tab
     find('[href="#bills"]').click
+  end
+
+  def open_claims_tab
+    find('[href="#claims"]').click
   end
 
   def fill_booking_fares
