@@ -4,7 +4,7 @@ require 'support/admin_support/root_path_helper'
 require 'support/admin_support/avia_order_service_helper'
 require 'support/ajax_waiter'
 
-describe 'Tests for order in admin panel' do
+describe 'Admin panel tests for order in admin panel' do
   include AdminOrderService
   include AdminAuthHelper
   include WaitForAjax
@@ -16,7 +16,8 @@ describe 'Tests for order in admin panel' do
   end
 
   it 'change sms package' do
-    find('a', text: 'Я буду следить за статусом рейса самостоятельно').click
+    # find link sms package
+    find('#order_items_tab table tbody tr:nth-of-type(2) a').click
     select('SMS-уведомление в случае отмены или переноса рейса', from: 'item_element_switcher[element_id]')
     find('[value="Обновить"]').click
     wait_for_ajax

@@ -1,5 +1,6 @@
 module AdminAuthHelper
 
+  # this is admin login and passw for entry in admin panel
 
 
   def log_in_admin_panel(email, password)

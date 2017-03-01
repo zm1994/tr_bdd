@@ -40,12 +40,5 @@ describe 'Main page' do
       expect(page.current_url == 'https://vk.com/tripway').to be true
     end
   end
-
-  it'check following a google+ tripway' do
-    find('.footer_top__social_link-google_plus').click
-    within_window(page.driver.browser.window_handles.last) do
-      expect(page.current_url == 'https://plus.google.com/+Tripway').to be true
-    end
-  end
 end
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'support/admin_support/auth_helper'
 require 'support/admin_support/root_path_helper'
 
-describe 'Tests for administrators in admin' do
+describe 'Admin panel tests for administrators in admin' do
   include AdminAuthHelper
 
   admin_email = ''
@@ -60,8 +60,9 @@ describe 'Tests for administrators in admin' do
 
     expect(page).to have_selector('#заявки')
     expect(page).to have_selector('a', text: "Доп. настройки")
+    expect(page).to have_selector('#пользователи')
     expect(page).to have_selector('#статистика')
-    expect(all('#tabs li').count == 4).to be true
+    expect(all('#tabs li').count == 5).to be true
   end
 
   it 'checks delineation of rights for first line' do

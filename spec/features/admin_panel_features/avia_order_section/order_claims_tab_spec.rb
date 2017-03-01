@@ -5,7 +5,7 @@ require 'support/admin_support/avia_order_service_helper'
 require 'support/ajax_waiter'
 require 'support/claim_service_helper'
 
-describe 'Tests for order in admin panel' do
+describe 'Admin panel tests for order in admin panel' do
   include AdminOrderService
   include AdminAuthHelper
   include WaitForAjax
@@ -31,6 +31,7 @@ describe 'Tests for order in admin panel' do
     find_order_in_admin($round_trip_booking_regular)
     open_claims_tab
     expect(page).to have_content(message_claim)
+    expect(page).to have_selector('a', text: 'upload.png')
     # send reply to client
     find('[name="order_claim_message[content]"]').set message_claim_reply
     find('[value="Отправить"]').click

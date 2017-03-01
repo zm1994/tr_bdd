@@ -4,7 +4,7 @@ require 'support/admin_support/root_path_helper'
 require 'support/admin_support/avia_order_service_helper'
 require 'support/ajax_waiter'
 
-describe 'Tests for order in admin panel' do
+describe 'Admin panel tests for order in admin panel' do
   include AdminOrderService
   include AdminAuthHelper
   include WaitForAjax
