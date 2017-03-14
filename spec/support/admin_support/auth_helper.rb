@@ -1,7 +1,8 @@
 module AdminAuthHelper
 
   # this is admin login and passw for entry in admin panel
-
+  $email_admin = 'testadmin@example.com'
+  $password_admin = 'asdwsx123'
 
   def log_in_admin_panel(email, password)
     find('input#admin_user_email').set email

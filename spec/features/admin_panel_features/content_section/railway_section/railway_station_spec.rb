@@ -5,7 +5,6 @@ require 'support/auth_helper'
 
 describe 'Admin panel tests for railway stations in admin' do
   include AdminAuthHelper
-  include AuthHelper
 
   before do
     visit($root_path_admin)

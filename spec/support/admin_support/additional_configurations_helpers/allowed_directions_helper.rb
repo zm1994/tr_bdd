@@ -16,7 +16,7 @@ module AllowedDirection
     find('[value="Фильтровать"]').click
     # delete if it present
     if page.has_css?('.col-departure_city_code', text: departure_code.upcase) &&
-        page.has_css?('.col-arrival_city_code', text: departure_code.upcase)
+        page.has_css?('.col-arrival_city_code', text: arrival_code.upcase)
       first('.delete_link').click
       expect(page).to have_content('successfully destroyed')
     end

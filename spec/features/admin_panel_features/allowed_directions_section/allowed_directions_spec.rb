@@ -16,22 +16,21 @@ describe 'Admin panel tests for cities in admin' do
   it 'create direction IEV-MIL' do
     delete_direction('IEV', 'MIL')
     delete_direction('MIL','IEV')
-    # pry.binding
-    # visit($root_path_admin + 'avia_api_allowed_directions/new')
-    # create_direction('IEV', 'MIL')
-    # expect(page).not_to have_content('уже существует')
-    # expect(page).to have_content('successfully created')
+    visit($root_path_admin + 'avia_api_allowed_directions/new')
+    create_direction('IEV', 'MIL')
+    expect(page).not_to have_content('уже существует')
+    expect(page).to have_content('successfully created')
   end
 
   it 'create direction MIL-IEV on existed direction IEV-MIL' do
     delete_direction('IEV', 'MIL')
     delete_direction('MIL','IEV')
-    # visit($root_path_admin + 'avia_api_allowed_directions/new')
-    # create_direction('IEV', 'MIL')
-    # expect(page).to have_content('successfully created')
-    # # create same allowed direction with difference on departure and arrival code
-    # visit($root_path_admin + 'avia_api_allowed_directions/new')
-    # create_direction('MIL', 'IEV')
-    # expect(page).to have_selector('.errors')
+    visit($root_path_admin + 'avia_api_allowed_directions/new')
+    create_direction('IEV', 'MIL')
+    expect(page).to have_content('successfully created')
+    # create same allowed direction with difference on departure and arrival code
+    visit($root_path_admin + 'avia_api_allowed_directions/new')
+    create_direction('MIL', 'IEV')
+    expect(page).to have_selector('.errors')
   end
 end

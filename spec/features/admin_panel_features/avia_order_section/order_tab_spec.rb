@@ -67,7 +67,7 @@ describe 'Admin panel tests for order in admin panel' do
   end
 
   it 'set bonuses by system' do
-    expected_bonuses = get_order_amount * 0.01
+    expected_bonuses = (get_order_amount * 0.01).round(2)
     open_order_owner_tab
     find('a', text: 'Выполнить').click
     expect(page).to have_content(expected_bonuses)
@@ -95,7 +95,6 @@ describe 'Admin panel tests for order in admin panel' do
     expect(get_commission_gateway == 0).to be true
     expect(get_current_bill - 1 == init_bill).to be true
   end
-
 
   it 'reissue tickets' do
     fill_booking_fares

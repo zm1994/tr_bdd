@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'support/admin_support/auth_helper'
 require 'support/admin_support/root_path_helper'
 
-describe 'Admin panel tests for cities in admin' do
+describe 'Admin panel tests for countries in admin' do
   include AdminAuthHelper
 
   before do

@@ -3,7 +3,7 @@ require 'support/admin_support/auth_helper'
 require 'support/admin_support/root_path_helper'
 require 'support/auth_helper'
 
-describe 'Admin panel tests for partners in admin' do
+describe 'Admin panel tests for avia banners in admin' do
   include AdminAuthHelper
   include AuthHelper
 

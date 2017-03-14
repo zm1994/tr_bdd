@@ -31,13 +31,12 @@ describe 'Form search' do
     booking_complex_trip(search_complex)
   end
 
-  it 'check complex fare rules ' do
+  it 'check complex fare rules' do
     if($url_recommendation_complex.empty?)
       search_complex_trip(search_complex)
     else
       visit($url_recommendation_complex)
     end
-
     # find first fare rule end check content
     check_fare_rules
   end
@@ -48,7 +47,6 @@ describe 'Form search' do
     else
       visit($url_recommendation_complex)
     end
-
     # find first fare rule end check content
     check_avia_journey_modal
   end
